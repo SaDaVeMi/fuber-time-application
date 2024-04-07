@@ -1,0 +1,107 @@
+
+
+#createUserPanel {
+	margin-left: 240px;
+}
+
+/* 
+@Autor Florian Bruderer, inspired by www.w3schools.com
+*/
+
+#homePanel{
+	margin-left: 240px;
+}
+
+#listUsersPanel{
+	margin-left: 240px;
+}
+
+#myAccountPanel{
+		margin-left: 240px;
+}
+
+#userDetailsPanel{
+		margin-left: 240px;
+}
+
+#welcomepara{
+	margin-left: 20px;
+}
+/* The SideBar*/
+.sidebar {
+	height: 1000%;
+	width: 235px;
+	position: fixed;
+	z-index: 1;
+	top: -200;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 16px;
+}
+
+/* SideBar Menus */
+.sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+}
+
+/* Hover over Menus */
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+	margin-left: 160px;
+	/* Same as the width of the sideNav */
+	padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+	.sidebar {
+		padding-top: 15px;
+	}
+	.sidebar a {
+		font-size: 18px;
+	}
+}
+
+
+/*
+This styles the User table
+*/
+
+#tblUserList {
+	margin-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tblUserList td, #tblUserList th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tblUserList tr{
+	text-align: center;
+	font-weight: 700;
+	
+}
+
+#tblUserList tr:nth-child(even){background-color: #008000;}
+
+#tblUserList tr:hover {background-color: #ffffff;}
+
+#tblUserList th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #008000;
+  color: white;
+}

@@ -1,0 +1,203 @@
+#clockPanel {
+	margin-left: 240px;
+	margin-top: 50px;
+}
+
+/* 
+@Autor Florian Bruderer, inspired by www.w3schools.com
+*/
+
+#userAccountPanel {
+	margin-left: 240px;
+}
+
+#workedHoursPanel {
+	margin-left: 240px;
+}
+
+#welcomepara {
+	margin-left: 20px;
+}
+
+#requestVactionPanel {
+	margin-left: 240px;
+}
+
+#clockButtons {
+	position: relative;
+}
+
+/*
+CLock in button
+
+*/
+#userclockinbtn {
+
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background-color: green;
+}
+
+#userclockinbtn:hover {
+	background-color: #3e8e41
+}
+
+#userclockinbtn:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+#userclockoutbtn {
+
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background-color: red;
+}
+
+#userclockoutbtn:hover {
+	background-color: #800000
+}
+
+#userclockoutbtn:active {
+	background-color: #800000;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+
+/* The SideBar*/
+.sidebar {
+	height: 1000%;
+	width: 235px;
+	position: fixed;
+	z-index: 1;
+	top: -200;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	padding-top: 16px;
+}
+
+/* SideBar Menus */
+.sidebar a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+}
+
+/* Hover over Menus */
+.sidebar a:hover {
+	color: #f1f1f1;
+}
+
+/* Style the main content */
+.main {
+	margin-left: 160px;
+	/* Same as the width of the sideNav */
+	padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+	.sidebar {
+		padding-top: 15px;
+	}
+	.sidebar a {
+		font-size: 18px;
+	}
+}
+
+/*
+This styles the Time table
+*/
+#tblWorkedHours {
+	display: block;
+	overflow-x: auto;
+	margin-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	overflow-x: auto;
+}
+
+#tblWorkedHours td, #tblUserList th {
+	border: 2px solid #000000;
+	padding: 8px;
+	white-space: nowrap;
+	height: 60px;
+}
+
+#tblWorkedHours tr {
+	text-align: center;
+	font-weight: 700;
+}
+
+#tblWorkedHours tr:nth-child(even) {
+	background-color: rgb(192, 192, 192);
+}
+
+#tblWorkedHours tr:nth-child(odd) {
+	background-color: #808080;
+}
+
+#tblWorkedHours tr:hover {
+	background-color: #ffffff;
+}
+
+#tblWorkedHours th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: rgb(192, 192, 192);
+	color: white;
+}
+
+/*
+This styles the Time table schedule
+*/
+#tblTimeSchedule {
+	display: block;
+	overflow-x: auto;
+	margin-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	overflow-x: auto;
+}
+
+#tblTimeSchedule td, #tblUserList th {
+	border: 2px solid #000000;
+	padding: 8px;
+	white-space: nowrap;
+	height: 60px;
+}
+
+#tblTimeSchedule tr {
+	text-align: center;
+	font-weight: 700;
+}
+
+#tblTimeSchedule tr:nth-child(even) {
+	background-color: rgb(192, 192, 192);
+}
+
+#tblTimeSchedule tr:nth-child(odd) {
+	background-color: #808080;
+}
+
+#tblTimeSchedule tr:hover {
+	background-color: #ffffff;
+}
+
+#tblTimeSchedule th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: rgb(192, 192, 192);
+	color: white;
+}

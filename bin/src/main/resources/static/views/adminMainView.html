@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="de" xlmns:th="http://www.tyhmeleaf.org">
+<!-- author Florian Bruderer & Timo Herrmann -->
+<head>
+	<meta charset="utf-8">
+	<title>FUBER TIME MANAGEMENT</title>
+	<link rel="stylesheet" href="/css/main.css" id="mainNormal">
+	<link rel="stylesheet" href="/css/adminMainView.css" id="adminMainViewNormal">
+	<link rel="stylesheet" href="/css/indexView.css" id="indexViewNormal">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+	<div class="topnav">
+		<a class="active" href="">FUBER Time Management</a> <select name="languages" id="languages"
+			onchange="translateLanguage(value);">
+			<option value="english">English</option>
+			<option value="german">Deutsch</option>
+		</select>
+		<select name="design" id="designs" onchange="changeCSS(value);">
+			<option value="normalDesign">Normal Design</option>
+			<option value="darkDesign">Dark Design</option>
+		</select>
+
+		<a id="clock"></a>
+	</div>
+
+	<!-- The sidebar -->
+	<div class="sidebar">
+		<p style="color: white;" id="welcomepara"></p>
+		<a href="javascript:showHomePanel()" id="adminHomeHref"><i class="fa fa-fw fa-home"></i>Home</a>
+		<a href="javascript:showCreateUserPanel()" id="adminCreateUserHref"><i class="fa fa-fw fa-plus"></i> Create an
+			User</a>
+		<a href="javascript:showManageUsersPanel()" id="adminManageUserHref"><i class="fa fa-fw fa-wrench"></i> Manage
+			Users</a>
+		<a href="javascript:showMyAccountPanel()" id="adminMyAccountHref"><i class="fa fa-fw fa-user"></i> My
+			Account</a>
+		<a href="/logout" id="adminLogoutHref"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+	</div>
+
+
+	<!-- Home Panel -->
+	<div id="homePanel">
+
+		<h1 id="welcomeParaAdmin">Welcome to Admin Page</h1>
+
+	</div>
+
+	<!-- Panel to Create Users -->
+	<div id="createUserPanel">
+
+		<form action="action_page.php" class="createUserForm">
+			<div>
+				<h1 id="createUserHeadLine">Create User</h1>
+				<p id="createUserPara">Please fill in this form to create a new user account.</p>
+				<hr>
+
+
+				<label for="department" id="createUserDepartmentLabel">Department</label>
+
+				<select name="departments" id="departmentDropDown">
+					<option value="Sales">Sales</option>
+					<option value="IT">IT</option>
+					<option value="Finance">Finance</option>
+					<option value="Human Ressources">HR</option>
+					<option value="Operations">Operations</option>
+				</select>
+
+				<br>
+				<br> <label for="userName" id="createUserNameLabel"><b>Name</b></label> <input type="text"
+					id="createUserNameField" placeholder="Enter E-Mail" name="userName" required> <br>
+				<br> <label for="psw" id="createUserPasswordLabel"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="password" id="createUserPasswordField" required> <br>
+				<br>
+				<label for="psw-repeat" id="createUserPasswordRepeatLabel"><b>Repeat Password</b></label> <input
+					type="password" placeholder="Repeat Password" name="password-repeat"
+					id="createUserPasswordRepeatField" required>
+
+				<br>
+				<br>
+				<label id="createUserTypeLabel">User Type</label>
+				<br>
+
+				<input type="radio" id="userRadio" name="userType" value="User" checked>
+				<label for="user" id="userRadioLabel">User</label>
+				<input type="radio" id="supervisorRadio" name="userType" value="Supervisor">
+				<label for="supervosir" id="supervisorRadioLabel">Supervisor</label>
+				<input type="radio" id="adminRadio" name="userType" value="Administrator">
+				<label for="admin" id="adminRadioLabel">Administrator</label>
+				<br>
+				<br>
+				<label id="employmentTypeLabel">Employment Type</label>
+				<br>
+				<input type="radio" id="fullTimeRadio" name="employmentType" value="FullTime" checked>
+				<label for="fullTime" id="fullTimeLabel">Full Time</label>
+				<input type="radio" id="partTimeRadio" name="employmentType" value="PartTime">
+				<label for="partTime" id="partTimeLabel">Part Time</label>
+
+
+				<hr>
+				<button type="button" class="registerbtn" onClick="createUser()"
+					id="createNewUserButton">Register</button>
+
+
+			</div>
+
+		</form>
+
+	</div>
+
+	<!-- My Account Panel -->
+	<div id="myAccountPanel">
+
+		<h1 id="adminMyAccountTile">My Account</h1>
+		<h3 id="adminMyAccountSubtitle">Change your Account Settings here</h3>
+		<button type="button" id="adminPasswordChangeButton" onClick="javascript:showChangePasswordPanel()">Change
+			Password</button>
+
+		<!--change password panel inside the My Account Panel -->
+		<div id="changePasswordPanel">
+			<form>
+				<h3 id="adminMyAccountSubtitleChangePassword">Change Password</h3>
+				<label for="fname" id="adminOldPasswordLabel">Old Password:</label><br> <input type="password"
+					id="oldAdminPassword"><br> <label for="fname" id="adminNewPasswordLabel">New Password:</label><br>
+				<input type="password" id="newAdminPassword"><br> <label for="lname"
+					id="adminRepeatNewPasswordLabel">Repeat
+					new Password</label><br> <input type="password" id="repeatNewAdminPassword"><br> <br> <input
+					type="button" value="Cancel" id="changeAdminPasswordCancelButton"
+					onClick="javascript:cancelPasswordChange()"> <input type="button" value="Change Password"
+					id="changeAdminPasswordButton" onClick="javascript:changeAdminPassword()">
+			</form>
+
+		</div>
+
+	</div>
+
+	<!-- Panel to List Users -->
+	<div id="listUsersPanel">
+
+		<h1 id="titleh1MangaeUserAdmin">Manage Users</h1>
+		<i class="fa fa-fw fa-search" id="searchIconManageUsers"></i> <input type="text" id="inputFilterUsers" />
+		<button onClick="javascript:applyFilter()">Go!</button>
+
+		<!-- This table will list all user for the admin, fill with javascript -->
+		<table id="tblUserList">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>ID</td>
+					<td id="title_td_columnType">Type</td>
+					<td id="title_td_columnDepartment">Department</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<!--Panel to show details from users -->
+	<div id="userDetailsPanel">
+
+		<h1>Welcome to User Details Page</h1>
+		<p id="pickedUserNameParagraph"></p>
+		<input type="button" onclick="showChangeUserName()" value="Change Username"> <br> <input type="button"
+			onclick="resetUserPassword()" value="Reset Password">
+		<input type="button" onclick="deleteUser()" value="Delete User"> <br>
+		<!--Panel inside Panel to Change Username -->
+		<div id="changeUserNamePanel">
+			<p>Enter a new Username</p>
+			<input type="text" id="newUserNameText"> <input type="button" onclick="changeUserName()" value="Confirm">
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/adminModel.js"></script>
+	<script src="js/designChange.js"></script>
+	<script src="js/translator.js" type="text/javascript"></script>
+
+
+</body>
+
+</html>

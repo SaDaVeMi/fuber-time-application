@@ -1,0 +1,59 @@
+#requestsPanel {
+	margin-left: 240px;
+}
+
+/* 
+@Autor Florian Bruderer, inspired by www.w3schools.com
+*/
+
+#requestList li {
+	list-style-type: none;
+	background-color: rgba(171, 185, 173, 0.75);
+	border-bottom: 1px solid white;
+	padding: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 700;
+}
+
+#requestList li > p {
+	 display:inline;
+}
+
+#requestList {
+	overflow: hidden;
+	overflow-y: auto;
+	height: 70%;
+	width: 80%;
+	padding: 0px;
+}
+
+.acceptRequest {
+	border-radius: 12px;
+	padding: 10px;
+	width: 100px;
+	margin-right: 29px;
+	background-color: white;
+  	color: black;
+ 	border: 1px solid #4CAF50;
+}
+
+.declineRequest {
+	border-radius: 12px;
+	padding: 10px;
+	width: 100px;
+	background-color: white;
+  	color: black;
+ 	border: 1px solid #f44336;
+}
+
+.acceptRequest:hover {
+	background-color: #4CAF50;
+}
+
+.declineRequest:hover {
+	background-color: #f44336;
+}
+
+#requestList li:hover {
+	background-color: white;
+}

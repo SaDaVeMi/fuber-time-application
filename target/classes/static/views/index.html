@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html lang="de">
+<!-- author Florian Bruderer & Timo Herrmann -->
+<head>
+<meta charset="utf-8">
+<title>FUBER TIME MANAGEMENT</title>
+
+
+<link href="css/indexView.css" rel="stylesheet" id="indexViewNormal"/>
+<link href="css/main.css" rel="stylesheet"  id="mainNormal"/>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+	<div class="topnav">
+		<a class="active" href="">FUBER Time Management</a> <select
+			name="languages" id="languages" onchange="translateLanguage(value);">
+			<option value="english">English</option>
+			<option value="german">Deutsch</option>
+		</select> 
+		<select
+			name="design" id="designs" onchange="changeCSS(value);">
+			<option value="normalDesign">Normal Design</option>
+			<option value="darkDesign">Dark Design</option>
+		</select> 
+		
+		
+		<a href="/login" id="goToLogin">Sign in</a>
+		<a id="clock"></a>
+	</div>
+
+
+	<main class="main-container">
+		<section class="section-one">
+			<canvas id="particles"></canvas>
+		</section>
+	</main>
+
+	<div class="wrap" style="top: 100px; left: 200px;">
+		<div id="a" class="bubble pulse" style="padding: 14px 18px">
+			<span>Bienvenido</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 200px; left: 300px;">
+		<div id="b" class="bubble pulse-s" style="padding: 14px 18px">
+			<span>Bienvenue</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 200px; left: 300px;">
+		<div id="b" class="bubble pulse-s" style="padding: 14px 18px">
+			<span>Willkommen</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 300px; left: 600px;">
+		<div class="bubble pulse" style="padding: 14px 18px">
+			<span>Welcome to FUBER Time Management</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 100px; left: 600px;">
+		<div class="bubble pulse-s" style="padding: 14px 18px">
+			<span>欢迎</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 500px; left: 600px;">
+		<div class="bubble pulse-s" style="padding: 14px 18px">
+			<span>خوش آمدید</span>
+		</div>
+	</div>
+
+	<div class="wrap" style="top: 500px; left: 100px;">
+		<div class="bubble pulse-s" style="padding: 14px 18px">
+			<span>Добро пожаловать</span>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="js/indexModel.js"></script>
+		<script src="js/designChange.js"></script>
+	<script src="js/translator.js" type="text/javascript"></script>
+
+
+
+</body>
+
+</html>
